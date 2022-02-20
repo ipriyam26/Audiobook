@@ -2,7 +2,7 @@ import csv
 
 def get_dictonary(file):
     titles_and_paths = {}
-    with open(file,'r') as f:
+    with open(file,'r',encoding='utf-8') as f:
         data = csv.reader(f)
         next(data)
         for row in data:

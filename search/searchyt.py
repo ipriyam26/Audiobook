@@ -59,8 +59,8 @@ class SearchYT:
                     break
                 print(f"[{i}] {match[0]}")
                 i+=1    
-        n =int( input("Please Pick one to download: "))   -1
-        while n<1 or n>i:
+        n =int( input("Please Pick one to download Enter 0 for other index"))   -1
+        while n<0 or n>i:
             n =int( input("Please Pick one to download: "))   -1
         if(n==0):
             self.yt_search()
