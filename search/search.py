@@ -35,6 +35,7 @@ class IndexSearch:
 
     def download(self,filename,downLink,path):
         p = os.path.join(path,filename)
+        print(f"Downloading.... {filename}")
         doc = requests.get(downLink)
         with open(p, 'wb') as f:
             f.write(doc.content)
