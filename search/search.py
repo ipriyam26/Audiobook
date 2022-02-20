@@ -54,8 +54,7 @@ class IndexSearch:
             for a in soup.find_all('a', href=re.compile(r'http.*\.mp3')):
                 filename = a['href'][a['href'].rfind("/")+1:]
                 downLink = a['href'] 
-                x = threading.Thread(target=self.download,args=(filename,downLink,path))
-                x.start()
-                x.join()
-            print("Downloaded all the files")
+                x = threading.Thread(target=self.download,args=(filename,downLink,path)).start()
+
+
         # os.system(f"gupload {bookName}")
