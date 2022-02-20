@@ -1,0 +1,2 @@
+#! /bin/bash
+/Users/ipriyam26/Programing/PycharmProjects/Audiobook/venv/bin/python /Users/ipriyam26/Programing/PycharmProjects/Audiobook/main.py $1
