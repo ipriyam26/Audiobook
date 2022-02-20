@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+scrapy = "*"
+thefuzz = "*"
+python-levenshtein-wheels = "*"
+pytube = "*"
+pipreqs = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
