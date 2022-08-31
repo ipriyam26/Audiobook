@@ -15,22 +15,21 @@ class IndexSearch:
 
     def get_link(self):
         titles = []
-        titles_and_paths = utils.get_dictonary('data.csv')
-        titles = list( titles_and_paths.values()) 
+        titles_and_paths = utils.get_dictonary('/Users/ipriyam26/Programing/PycharmProjects/Audiobook/data.csv')
+        titles = list(titles_and_paths.values())
         titles.pop(0)
         matches = list(process.extract(self.search, titles, limit=10, scorer=fuzz.token_set_ratio))
-        i=1
-        if(matches.__len__() == 0):
+
+        if matches.__len__() == 0:
             print("No match found")
             return "No match found"
-        for match in matches:
+        for i, match in enumerate(matches, start=1):
             print(f"[{i}] {match[0]}")
-            i+=1
-        n =int( input("Please Pick one to download \nor 0 to search other index: "))   -1
-        while n>11 or n<-1:
-            n =int( input("Please Pick one to download: "))   -1
-        link = "No match found" if n<0 else utils.get_key(matches[n][0],titles_and_paths)
-        return link
+        n = int(input("Please Pick one to download \nor 0 to search other index: ")) - 1
+
+        while n > 11 or n < -1:
+            n = int(input("Please Pick one to download: ")) - 1
+        return "No match found" if n < 0 else utils.get_key(matches[n][0], titles_and_paths)
 
 
     def download(self,filename,downLink,path):
