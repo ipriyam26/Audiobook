@@ -34,7 +34,7 @@ class SearchYT:
       
     
     def get_link(self):
-        titles_and_paths = utils.get_dictonary('/Users/ipriyam26/Programing/PycharmProjects/Audiobook/ytbooklist.csv')
+        titles_and_paths = utils.get_dictonary('ytbooklist.csv')
         titles = list(titles_and_paths.values())
         matches = list(process.extract(self.search, titles, limit=10, scorer=fuzz.token_set_ratio))
 
